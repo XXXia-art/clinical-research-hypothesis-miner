@@ -9,7 +9,7 @@
 | 字段 | 要求 |
 |---|---|
 | 假说 | 一句可检验表述 |
-| 证据锚点 | 语料信号、PubMed 结果、Scholar 结果，或清楚标注的推断 |
+| 证据锚点 | 语料信号、academic-research/PubMed 结果、arXiv 方法线索、网页/数据库核验结果，或清楚标注的推断 |
 | 机制链 | 触发因素 -> 分子事件 -> 细胞/组织表型 -> 可测量终点 |
 | 关键读出 | 基因、蛋白、通路、细胞状态、临床终点或组学特征 |
 | 最小验证 | 能检验核心主张的最小数据集或实验 |
@@ -37,8 +37,9 @@ In [disease/model/context], [entity/pathway/cell state] may drive or mark [pheno
 
 适用于用户只有文献和公共数据的情况。
 
-- 重新运行 PubMed 检索并收集核心论文。
-- 手动使用 Google Scholar 查找 landmark paper 和近年施引论文。
+- 通过 academic-research 重新运行 PubMed 检索并收集核心论文。
+- 按需使用 arXiv 查找 AI、计算方法、多组学算法或预印本方法线索。
+- 使用 Web/Tavily 查找公共数据集、官方数据库页面、临床试验注册或指南页面。
 - 识别公共数据集或官方数据集页面。
 - 如果可获得数据，规划表达、通路、生存或相关性分析。
 - 产出初步证据图或研究 protocol。
@@ -66,7 +67,8 @@ In [disease/model/context], [entity/pathway/cell state] may drive or mark [pheno
 如果用户未说明资源，默认按现实医院科研条件估计：
 
 - 文献和 PubMed 检索可用。
-- Google Scholar 可手动检索或由用户粘贴结果。
+- arXiv 可用于方法学和预印本补充。
+- Web/Tavily 可用于官方页面、数据集、临床试验和背景核验。
 - 公共数据集可能可用，但需要核验。
 - 临床样本需要伦理审批。
 - 昂贵的单细胞、空间组学、蛋白组或动物实验应作为升级路径，而不是默认要求。

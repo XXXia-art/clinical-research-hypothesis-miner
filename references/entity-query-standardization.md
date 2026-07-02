@@ -22,7 +22,7 @@
 
 1. **临床中文问题：** 让临床医生能直接理解。
 2. **科研问题：** 明确疾病、实体、终点和研究边界。
-3. **英文检索问题：** 面向 PubMed 和 Google Scholar 优化。
+3. **英文检索问题：** 面向 academic-research/PubMed、arXiv 和 Web/Tavily 优化。
 
 示例结构：
 

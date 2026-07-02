@@ -4,13 +4,13 @@
 
 ## 目标
 
-证据地图应展示：哪些方向已经拥挤，哪些方向证据薄弱，哪些方向存在冲突，哪些方向可以通过现实可行的研究创造价值。它本身不要求可视化，但结构应足够清晰，便于后续接入 draw.io MCP 或其他可视化工具。
+证据地图应展示：哪些方向已经拥挤，哪些方向证据薄弱，哪些方向存在冲突，哪些方向可以通过现实可行的研究创造价值。参赛版本以结构化表格和文字总结为准，不声明额外可视化工具能力。
 
 ## 地图表格
 
 用下表整理候选方向：
 
-| 候选方向 | 证据密度 | 证据层级 | 机制链 | 冲突/争议 | 引用网络线索 | 方法饱和度 | 可行性 | 创新判断 |
+| 候选方向 | 证据密度 | 证据层级 | 机制链 | 冲突/争议 | 来源/方法线索 | 方法饱和度 | 可行性 | 创新判断 |
 |---|---|---|---|---|---|---|---|---|
 
 字段定义：
@@ -19,7 +19,7 @@
 - **证据层级：** review、human、public omics、cell、animal、trial、database、web。
 - **机制链：** complete / partial / broken / speculative。
 - **冲突/争议：** none / explainable / unresolved / high。
-- **引用网络线索：** landmark / rising citing cluster / stagnant / not available。
+- **来源/方法线索：** PubMed evidence / arXiv method / official web / user-provided / not available。
 - **方法饱和度：** saturated / improvable / under-validated。
 - **可行性：** high / medium / low。
 - **创新判断：** crowded、pseudo-gap、narrowable、promising、high-risk。
