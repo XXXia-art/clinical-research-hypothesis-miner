@@ -1,8 +1,6 @@
-﻿---
+---
 name: clinical-research-hypothesis-miner
-
 description: 将临床或基础医学科研 idea、关键词、PubMed 检索返回的文献记录、arXiv 方法学论文、Web/Tavily 官方资源和核验结果或用户粘贴的文献列表，整理为搜索文献概述、创新点证据地图、可追溯研究假说、验证路径和 Start/Narrow/Redesign/Stop 科研决策。适用于 AI for Science 场景中的文献挖掘、疾病机制、生物标志物、药物靶点、多组学、创新性判断、研究空白、方法学补充、假说生成和课题设计。
-
 ---
 
 # 临床科研文献到假说挖掘器
