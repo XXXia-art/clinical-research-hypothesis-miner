@@ -8,7 +8,7 @@
 |---|---|
 | 原始问题 | 用户原始表述 |
 | 标准化中文研究问题 | 精准中文科研问题 |
-| English retrieval question | 面向 academic-research/PubMed、arXiv、Web/Tavily 的英文检索问题 |
+| English retrieval question | 面向 PubMed、arXiv、Web/Tavily 的英文检索问题 |
 | 问题类型 | mechanism / biomarker / target / multi-omics / literature overview / gap / feasibility |
 | 关键实体 | disease、gene/protein、pathway、drug、model、endpoint |
 | 歧义和排除范围 | 未解决符号、宽泛词、排除的疾病阶段或模型 |
@@ -17,7 +17,7 @@
 
 | 来源类型 | 纳入内容 | 用途 | 证据边界 |
 |---|---|---|---|
-| 核心医学文献 | academic-research 返回的 PubMed 综述、PMID/标题/摘要或用户提供的核心论文 | 建立生物医学证据主干 | 说明是否仅基于标题/摘要、前若干条结果或用户筛选文献 |
+| 核心医学文献 | PubMed 检索返回的文献概述、PMID/标题/摘要或用户提供的核心论文 | 建立生物医学证据主干 | 说明是否仅基于标题/摘要、前若干条结果或用户筛选文献 |
 | 方法学与预印本补充 | arXiv 结果、AI/计算方法/多组学算法论文或用户提供的方法学材料 | 补充算法、建模、组学整合和计算流程线索 | 预印本和方法论文不能替代医学证据或临床结论 |
 | 网页与数据库核验 | 官方数据库、试验注册页、指南页面、数据集页面或背景网页 | 补充数据来源、试验状态和背景信息 | 网页证据不能替代正式文献 |
 | 用户提供材料 | 论文列表、摘要、笔记、截图、导出结果 | 作为本次分析的实际语料 | 完整性取决于用户材料，缺失字段不得自行补全 |
@@ -65,7 +65,7 @@
 
 | 版本 | 适用条件 | 核心工作 | 产出 |
 |---|---|---|---|
-| Lite | 只有文献/公共数据 | academic-research/PubMed 综述、arXiv 方法补充、Web/Tavily 公共数据集检查、通路回顾 | 选题判断、初步证据图、protocol 基础 |
+| Lite | 只有文献/公共数据 | PubMed 综述、arXiv 方法补充、Web/Tavily 公共数据集检查、通路回顾 | 选题判断、初步证据图、protocol 基础 |
 | Standard | 有临床样本/基础实验条件 | 本地样本验证、qPCR/IHC/ELISA/western blot/流式/简单功能实验 | 原创研究路径 |
 | Publication+ | 有更强协作和资源 | 匹配多组学、单细胞/空间、动物 rescue、外部队列 | 更高影响力机制或转化研究 |
 

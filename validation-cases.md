@@ -6,12 +6,12 @@
 
 输入：
 
-> 脓毒症相关急性肾损伤中，铁死亡是否可能作为早期诊断和治疗靶点？请先通过 academic-research 完成 PubMed 综述，再设计 arXiv 和 Web/Tavily 检索，最后给出创新点证据地图和可验证假说。
+> 脓毒症相关急性肾损伤中，铁死亡是否可能作为早期诊断和治疗靶点？请先完成 PubMed 检索与文献概述，再设计 arXiv 和 Web/Tavily 检索，最后给出创新点证据地图和可验证假说。
 
 应展示能力：
 
 - 将中文问题转成英文检索词：sepsis-associated acute kidney injury、ferroptosis、biomarker、therapeutic target。
-- 使用 academic-research / PubMed 作为核心生物医学检索入口。
+- 使用 PubMed 作为核心生物医学检索入口。
 - 按需加入 arXiv 方法学补充和 Web/Tavily 官方核验，但不把它们替代为核心医学证据。
 - 输出搜索文献概述和创新点证据地图。
 - 区分机制证据、诊断价值和治疗靶点价值。
@@ -41,7 +41,7 @@
 
 - 如果用户没有给出基因符号，询问或标注为待核验。
 - 解释 biomarker 证据边界：相关性、预后、诊断和临床可用性不是同一件事。
-- 给出 academic-research/PubMed 检索计划、arXiv 方法补充计划和 Web/Tavily 数据集核验计划。
+- 给出 PubMed 检索计划、arXiv 方法补充计划和 Web/Tavily 数据集核验计划。
 - 给出“公共数据 + 少量本地样本验证”的可执行研究方案。
 - 避免过度宣称临床标志物价值。
 
@@ -67,7 +67,7 @@
 应展示能力：
 
 - 定义治疗类型、反应终点、取样时间、转录组/蛋白组匹配关系和临床变量。
-- 使用 academic-research/PubMed 做核心文献检索，用 arXiv 补充多组学/AI 方法，用 Web/Tavily 核验数据集、指南和背景资料。
+- 使用 PubMed 做核心文献检索，用 arXiv 补充多组学/AI 方法，用 Web/Tavily 核验数据集、指南和背景资料。
 - 解释多组学是否真正回答了明确科学问题。
 - 输出显示拥挤区、薄弱区、冲突区和可行区的创新点证据地图。
 - 给出 Start/Narrow/Redesign/Stop 决策。
@@ -78,7 +78,7 @@
 
 - 输入材料分类。
 - 实体和检索式标准化。
-- academic-research/PubMed、arXiv、Web/Tavily 三源分工。
+- PubMed、arXiv、Web/Tavily 三源分工。
 - 搜索文献概述。
 - 创新点证据地图。
 - 伪空白剔除。
