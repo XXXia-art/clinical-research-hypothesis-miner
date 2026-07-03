@@ -76,19 +76,6 @@
 | 英文检索问题 | 供 academic-research/PubMed、arXiv 和 Web/Tavily 后续路由使用 | 使用标准英文医学术语、基因/蛋白符号、通路名和可检索终点 |
 
 
-## 检索词分层
-
-按层构建检索词。先宽后窄，不要一开始把检索式写得过窄，导致领域全貌被遮蔽。
-
-| 层级 | 内容 | 示例 |
-|---|---|---|
-| L1 疾病词 | 英文标准疾病名、缩写、相关综合征、分期 | sepsis, septic shock, acute kidney injury, SA-AKI |
-| L2 实体词 | 官方基因/蛋白符号、全称、常见别名、药物名、代谢物 | GPX4, SLC7A11, CD48, sphingosine-1-phosphate |
-| L3 机制词 | 生物过程、通路、细胞状态 | ferroptosis, macrophage polarization, immune exhaustion, metabolic reprogramming |
-| L4 用途词 | 研究目标和应用场景 | biomarker, prognosis, diagnosis, therapeutic target, resistance, mechanism |
-| L5 证据类型词 | 研究设计、数据类型、模型 | transcriptomics, proteomics, single-cell, cohort, animal model, clinical trial |
-| L6 约束词 | 年份、物种、组织、疾病亚型、治疗类型 | human, mouse, renal tubular epithelial cell, anti-PD-1 |
-
 ## 歧义检查
 
 下结论前标注以下风险：
