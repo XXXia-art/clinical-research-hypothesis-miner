@@ -1,6 +1,8 @@
 ﻿---
 name: clinical-research-hypothesis-miner
+
 description: 将临床或基础医学科研 idea、关键词、PubMed 检索返回的文献记录、arXiv 方法学论文、Web/Tavily 官方资源和核验结果或用户粘贴的文献列表，整理为搜索文献概述、创新点证据地图、可追溯研究假说、验证路径和 Start/Narrow/Redesign/Stop 科研决策。适用于 AI for Science 场景中的文献挖掘、疾病机制、生物标志物、药物靶点、多组学、创新性判断、研究空白、方法学补充、假说生成和课题设计。
+
 ---
 
 # 临床科研文献到假说挖掘器
@@ -101,15 +103,15 @@ PubMed、arXiv、Web/Tavily 不构成三个同等强度的医学证据源。PubM
 
 ### Phase 4：构建创新点证据地图
 
-- 使用 reference：[创新点证据地图](references/innovation-evidence-map.md) 和 [科研严谨性规则](references/research-integrity-rules.md)。
+- 使用 reference：[创新点证据地图](references/innovation-evidence-map.md)。
 - 输入：Phase 3 的证据概述和证据缺口。
-- 动作：按证据密度、证据层级、机制链完整度、冲突证据、来源/方法线索、方法饱和度、可行性和创新类型判断候选创新点。
-- 输出：创新点证据地图、拥挤方向、薄弱方向、真实空白和伪空白说明。
+- 动作：按证据密度、证据层级、机制链完整度、冲突证据和来源线索，整理候选创新方向的地图层判断。
+- 输出：创新点证据地图、拥挤方向、薄弱方向、冲突方向、疑似伪空白标记和进入 Phase 5 审计的候选方向。
 
 ### Phase 5：审计研究空白与证据风险
 
 - 使用 reference：[科研严谨性规则](references/research-integrity-rules.md)。
-- 输入：Phase 4 的候选空白和创新点。
+- 输入：Phase 4 的候选方向、疑似伪空白标记和证据地图判断。
 - 动作：剔除伪空白，检查引用真实性、证据不足、冲突证据、因果过度宣称、临床转化过度、资源不可得和可行性风险。
 - 输出：保留的真实研究空白、被剔除的伪空白、证据风险和需要补检索的内容。
 
@@ -144,7 +146,7 @@ PubMed、arXiv、Web/Tavily 不构成三个同等强度的医学证据源。PubM
 | 用户输入解析、研究问题、实体、同义词和边界标准化 | [input-question-standardization.md](references/input-question-standardization.md) |
 | PubMed、arXiv 与 Web/Tavily 证据来源路由、采集与标准化 | [evidence-source-routing.md](references/evidence-source-routing.md) |
 | 文献与资源证据概述、证据边界和待补证据 | [evidence-overview.md](references/evidence-overview.md) |
-| 创新点、拥挤方向、薄弱证据和真实空白 | [innovation-evidence-map.md](references/innovation-evidence-map.md) |
+| 创新点证据地图、拥挤方向、薄弱方向、冲突方向和候选机会 | [innovation-evidence-map.md](references/innovation-evidence-map.md) |
 | 幻觉审计、证据质量、引用真实性和可行性风险 | [research-integrity-rules.md](references/research-integrity-rules.md) |
 | 可检验假说、验证阶梯和研究方案 | [hypothesis-and-validation-design.md](references/hypothesis-and-validation-design.md) |
 | 最终科研决策卡输出 | [decision-card-template.md](references/decision-card-template.md) |
