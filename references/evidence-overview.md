@@ -4,6 +4,8 @@
 
 ## 输入要求
 
+Phase 3 的输入优先来自 Phase 2 生成的 `evidence-packet-[topic-slug]-[YYYYMMDD].md` 文件级记录，否则依托于Phase 2 标准化的材料，如果没有该文件或同结构内容，Phase 3 不应继续生成文献与资源概述。
+
 Phase 3 只接收已经过 Phase 2 标准化的材料：
 
 | 输入 | 来源 | 用途 |
@@ -12,8 +14,6 @@ Phase 3 只接收已经过 Phase 2 标准化的材料：
 | arXiv methods packet | Phase 2 | 补充 AI、统计、多组学、计算方法和预印本方法线索 |
 | Web verification packet | Phase 2 | 核验数据集、临床试验、指南、数据库入口、官方页面和论文线索 |
 | 用户材料包 | Phase 2 | 保留用户实际提供的论文、摘要、实验结果、笔记或导出材料 |
-
-如果 Phase 2 没有形成返回记录表，Phase 3 不得输出文献数量、年份趋势、代表性记录、数据集名称或主题分布；只能说明证据包缺失，并要求先补齐 Phase 2。
 
 ## 证据完整性规则
 
