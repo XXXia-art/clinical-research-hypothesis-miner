@@ -1,25 +1,8 @@
 ﻿# 证据来源路由、采集与标准化协议
 
-本文件用于 Phase 2。它接收 Phase 1 产出的标准化研究问题、核心实体、同义词、排除边界和用户已提供材料状态，决定本轮需要哪些检索来源，执行或记录可用检索返回，并把原始返回整理为可交给 Phase 3 使用的标准化证据包。
-
-Phase 2 只回答四个问题：
-
-1. 本轮需要 PubMed、arXiv、Web/Tavily 中的哪些来源。
-2. 每个来源是已检索、用户提供、未获得，还是不适用。
-3. 每条材料有哪些可用字段，哪些字段缺失。
-4. 每类材料在后续证据概述中可以用于什么，不能用于什么。
+本文件用于 Phase 2。它接收 Phase 1 产出的标准化研究问题以及核心实体等，决定本轮需要哪些检索来源，执行并把原始返回整理为可交给 Phase 3 使用的标准化证据包。
 
 Phase 2 不做正式文献综述、证据强弱判断、趋势分析、创新点判断或科研决策。这些任务交给后续阶段。
-
-## 职责边界
-
-| 文件 | 负责什么 | 不负责什么 |
-|---|---|---|
-| `input-question-standardization.md` | 标准化问题、实体、同义词、排除边界、用户材料状态 | 决定检索来源、采集结果、整理证据包 |
-| `evidence-source-routing.md` | 判断是否需要 PubMed、arXiv、Web/Tavily；生成按需检索计划；记录检索返回；整理标准化证据包、用户材料包和来源边界 | 正式文献概述、证据强弱判断、趋势分析、创新点判断 |
-| `evidence-overview.md` | 接收 Phase 2 的标准化证据包，生成文献与资源证据概述、证据边界和待补证据清单 | 重新设计检索路由、抓取新结果 |
-
-用户提供材料不是第四个检索源。它是 Phase 1 已识别的输入材料，Phase 2 只需要保留其状态，整理为用户材料包，并判断是否还需要额外检索补充。
 
 ## 检索来源职责分工
 
@@ -40,7 +23,6 @@ Phase 2 不要求每个新主题都生成固定数量的检索包。应根据任
 | 医学机制、标志物、靶点、疾病相关性问题 | PubMed | 生成 1 个核心 PubMed 检索问题；必要时给出宽检索和聚焦检索两个版本 |
 | 问题涉及 AI、统计建模、多组学算法、预测模型或计算流程 | arXiv | 生成方法学检索式，并说明它只用于方法线索 |
 | 需要核验数据集、临床试验、指南、数据库、官方页面或机构资料 | Web/Tavily | 生成目标页面或网页检索式，并标注优先官方来源 |
-| PubMed 返回很少或缺少明显论文线索 | Web/Tavily | 对论文标题、作者、DOI、PMID 或主题词进行补查，并标注为论文线索补查 |
 | 用户已经提供足够论文标题/摘要，且只要求整理这些材料 | 可不新增检索 | 整理为用户材料包，说明本轮不代表系统检索全貌 |
 
 如果 Phase 1 缺少关键实体、疾病场景或终点，Phase 2 应先输出待补信息或低风险检索计划，不得强行扩展为完整三源检索。
@@ -57,49 +39,78 @@ Phase 2 不要求每个新主题都生成固定数量的检索包。应根据任
 | 多组学 | `("Disease") AND (transcriptomics OR proteomics OR single-cell OR spatial) AND outcome` | arXiv：`multi-omics machine learning disease outcome`; Web/Tavily：`Disease transcriptomics proteomics dataset GEO` |
 | AI / 计算方法 | `("Disease") AND (machine learning OR artificial intelligence OR prediction model)` | arXiv：`Disease machine learning prediction model`; Web/Tavily：`Disease AI model benchmark dataset` |
 
-## 标准化证据包交付字段
+## 标准化证据包交付格式
 
-每次检索或检索规划结束后，向 Phase 3 交付下列结构。没有实际执行或没有返回的来源必须标注为 `未获得`，不得写成已检索。
+每次检索或检索规划结束后，Phase 2 必须形成一个可保存、可下载、可交给 Phase 3 复用的标准化证据包。不得只写“工具已完成”“检索完成”或只展示工具名。
 
-```text
-标准化证据包
+建议文件名：`evidence-packet-[topic-slug]-[YYYYMMDD].md`。如果当前运行环境不能创建文件，则在回答中用同一结构完整展示，方便用户复制保存。
 
-1. PubMed evidence packet
-   - 执行状态：已检索 / 用户提供 / 未获得 / 不适用
-   - 检索问题：
-   - 中文研究问题：
-   - English PubMed question：
-   - 核心实体、同义词、排除边界：
-   - 优先研究类型、时间范围、重点终点：
-   - 检索式或用户语料：
-   - 返回记录：标题、摘要、年份、期刊、PMID/DOI、链接或来源字段
-   - 缺失字段：
-   - 来源边界：通常基于摘要和元数据，不等同于全文系统综述；不得用 arXiv 或网页片段替代 PubMed 医学证据
+标准化证据包应包含以下部分:
 
-2. arXiv methods packet
-   - 执行状态：已检索 / 未获得 / 不适用
-   - 检索目的：AI、统计模型、多组学算法、计算框架、预印本方法线索
-   - 检索式：
-   - 返回记录：标题、日期、链接、摘要、方法类型初标
-   - 缺失字段：
-   - 来源边界：
+### 证据包元数据
 
-3. Web verification packet
-   - 执行状态：已检索 / 未获得 / 不适用
-   - 核验目的：数据集、临床试验、指南、数据库、官方页面、背景资料或论文线索补查
-   - 检索式或目标页面：
-   - 返回记录：网页标题、机构/数据库、URL、页面类型、可用字段
-   - 来源强弱：官方 / 权威机构 / 数据库页面 / 普通网页 / 来源弱
-   - 缺失字段：
-   - 来源边界：
+| 字段 | 内容 |
+|---|---|
+| evidence_packet_id | topic slug + 日期或时间戳 |
+| phase | Phase 2 |
+| 原始问题 | 用户原始输入 |
+| 标准化研究问题 | Phase 1 输出 |
+| 生成日期 | 当前日期 |
 
-4. 用户材料包
-   - 执行状态：用户提供 / 未提供
-   - 材料类型：标题、摘要、文献列表、实验结果、笔记、截图、导出结果等
-   - 可用字段：
-   - 缺失字段：
-   - 使用边界：只能代表用户提供范围，不得声称代表全领域检索结果
-```
+### 来源状态总表
+
+每个来源都必须列一行，即使未执行或不适用。
+
+| 来源 | 执行状态 | query | 返回数量 | 可进入 Phase 3 | 主要边界 |
+|---|---|---|---:|---|---|
+| PubMed | 已检索 / 未获得 / 不适用 | PubMed 工具返回的 `query` |  | 是/否 | 基于标题、摘要和元数据；不是全文系统综述 |
+| arXiv | 已检索 / 未获得 / 不适用 | arXiv 工具返回的 `query` |  | 是/否 | 不能替代 PubMed 医学证据 |
+| Web/Tavily | 已检索 / 未获得 / 不适用 | Web 工具返回的 `query` |  | 是/否 | 普通网页只能作为线索 |
+| 用户材料 | 用户提供 / 未提供 / 不适用 | 用户原始材料或文件名 |  | 是/否 | 只代表用户提供范围，不代表系统检索结果 |
+
+### PubMed 返回记录表
+
+PubMed 工具返回 JSON 时，Phase 2 应优先按工具原字段整理，不要改造成无法回溯的自定义字段。工具返回的 `success`、`query` 和 `items` 分别对应执行状态、检索式和返回记录。
+
+| uid | url | doi | title | authors | journal | volume | issue | published | pub_types | abstract | keywords | mesh_terms | language |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+
+### arXiv 返回记录表
+
+arXiv 工具返回 JSON 时，Phase 2 应按工具原字段整理。工具返回的 `success`、`query`、`total` 和 `papers` 分别对应执行状态、检索式、返回总数和论文记录。
+
+| title | authors | published | link | abstract |
+|---|---|---|---|---|
+
+### Web/Tavily 返回记录表
+
+Web 搜索工具返回 JSON 时，Phase 2 应按工具原字段整理。工具返回的 `success`、`query`、`count` 和 `items` 分别对应执行状态、检索式、返回数量和网页记录。
+
+| title | url | snippet | domain |
+|---|---|---|---|
+
+### 用户材料记录表
+
+用户材料可能是论文题录、摘要、PDF 摘录、实验结果、表格、笔记、网页粘贴、对话记录或用户自行整理的清单。Phase 2 只做标准化登记和边界标注，不把用户材料改写成 PubMed、arXiv 或 Web/Tavily 的检索结果。
+
+| material_id | material_type | user_source | title_or_label | authors_or_org | date_or_version | url_or_identifier | provided_content | extractable_fields | missing_fields | source_boundary |
+|---|---|---|---|---|---|---|---|---|---|---|
+
+字段说明：
+
+| 字段 | 含义 |
+|---|---|
+| material_id | 本轮证据包内的用户材料编号，例如 `user-01` |
+| material_type | 材料类型，例如 paper, abstract, note, table, dataset, trial, guideline, chat, webpage, experiment |
+| user_source | 用户提供方式或文件名，例如 pasted text, uploaded file, 手工清单 |
+| title_or_label | 原题名；没有题名时用简短标签 |
+| authors_or_org | 用户材料中实际出现的作者、机构或组织；没有则写 `未提供` |
+| date_or_version | 用户材料中实际出现的日期、年份、版本或访问时间；没有则写 `未提供` |
+| url_or_identifier | DOI、PMID、arXiv ID、URL、试验号、数据集编号等；没有则写 `未提供` |
+| provided_content | 对用户材料内容的短摘要或关键摘录说明 |
+| extractable_fields | 可从材料中明确抽取的字段，例如疾病、实体、终点、方法、样本、数据集 |
+| missing_fields | 影响后续判断但用户未提供的字段 |
+| source_boundary | 说明该材料只代表用户提供内容，是否需要 PubMed/Web 等进一步核验 |
 
 ## 降级处理规则
 
